@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+body {
+    background-color: Purple;
+	}
+</style>
+
+	<script type="text/javascript">
+	
+		myImages = new Array(
+			
+				
+				"Graduation2.jpg",
+				
+			
+				
+				)
+				
+		var imageIndex=0;
+
+		var changeImage = function(direction){
+			
+			imageIndex = imageIndex + direction;
+
+			if (imageIndex > myImages.length - 1){
+				imageIndex = 0
+			}
+
+			if (imageIndex < 0) {
+				imageIndex = myImages.length-1
+			}
+
+			document.getElementById('imageDisplayed').src = myImages[imageIndex];
+		}
+	
+	</script>
+
+</head>
+
+<body>
+	<center>
+	<h1>Pictures</h1>
+	</center>
+	<p align="center">
+		<img id="imageDisplayed" src="XC.jpg"/>
+	</p>
+
+	<center>
+		<table border=0>
+			<tr>
+				<td align=center>
+					<input type="button" value="Previous Image" onclick="changeImage(-1);">
+					<input type="button" value="Next Image" onclick="changeImage(1);">
+
+				</td>
+			</tr>
+		</table>
+	</center>
+
+</body>
+
+</html>
